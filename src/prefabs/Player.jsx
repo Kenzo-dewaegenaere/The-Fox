@@ -1,6 +1,6 @@
 import { useSphere } from "@react-three/cannon";
 import React, { useEffect, useRef, useState } from "react";
-import { useFrame, useThree } from "react-three-fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { Vector3 } from "three";
 import { useKeyboardInput } from "../hooks/useKeyboardInput";
 import { useMouseInput } from "../hooks/useMouseInput";
@@ -13,6 +13,10 @@ const bulletSpeed = 35;
 const bulletCoolDown = 300;
 const jumpSpeed = 3;
 const jumpCoolDown = 400;
+
+const Camera = () => {
+  const { camera, scene } = useThree();
+};
 
 export const Player = () => {
   const [sphereRef, api] = useSphere(() => ({
@@ -30,8 +34,6 @@ export const Player = () => {
 
   const input = useVariable(pressed);
   const mouseInput = useVariable(pressedMouse);
-
-  const { camera, scene } = useThree();
 
   const state = useRef({
     timeToShoot: 0,

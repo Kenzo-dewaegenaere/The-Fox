@@ -5,6 +5,13 @@ import { Plane } from "../prefabs/Plane";
 import { Player } from "../prefabs/Player";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls";
 import { Cube } from "../prefabs/Cube";
+import {
+  EffectComposer,
+  DepthOfField,
+  Bloom,
+  Noise,
+  Vignette,
+} from "@react-three/postprocessing";
 
 extend({ PointerLockControls });
 
@@ -49,5 +56,3 @@ export const DefaultScene = () => {
     </>
   );
 };
-
-export default DefaultScene;
