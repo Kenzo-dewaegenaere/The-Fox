@@ -1,0 +1,11 @@
+Model Information:
+* title:	Golden Chicken Hero
+* source:	https://sketchfab.com/3d-models/golden-chicken-hero-00616f328a8b4b5a8e689f61e70758b6
+* author:	rmdkurnya (https://sketchfab.com/rmdkurnya)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Golden Chicken Hero" (https://sketchfab.com/3d-models/golden-chicken-hero-00616f328a8b4b5a8e689f61e70758b6) by rmdkurnya (https://sketchfab.com/rmdkurnya) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+canvas{
+  z-index: -10;
+  
+}
+
+body {
+  position: fixed;
+  overflow: hidden;
+  overscroll-behavior-y: none;
+  font-family: 'Amiri', serif;
+  color: white;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(circle at bottom center, rgba(49, 46, 46, 0.16) 0%, rgb(14, 0, 179) 48%);
+}
+
+.loader {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 900;
+}
+
+.header {
+  pointer-events: none;
+  position: absolute;
+  top: 6em;
+  left: 0;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 900;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center;
+}
+
+.header > span {
+  padding: 0 3.25em;
+  letter-spacing: 0.4em;
+  position: relative;
+}
+
+.header > span.active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  width: 20px;
+  height: 2px;
+  background: white;
+}
+
+.header_player {
+  
+  z-index: 3;
+  position: absolute;
+  top: 20em;
+  left: 0;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 900;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center;
+}
+
+.header_player > span {
+  padding: 0 3.25em;
+  letter-spacing: 0.4em;
+  position: relative;
+}
+
+.header_player > span.active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  width: 20px;
+  height: 2px;
+  background: white;
+  
+}
+.play__button{
+  text-decoration: none;
+  color: white;
+  font-size: 3rem;
+}
+.play__button:hover{
+  color: #ffff11;
+  text-decoration: none;
+}
+
+.middle {
+  pointer-events: none;
+  position: absolute;
+  bottom: 2.5em;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  font-size: 2em;
+  letter-spacing: 0.5em;
+  text-align: center;
+  width: 100%;
+}
+
+.middle > h1 {
+  line-height: 0.9em;
+  font-weight: 100;
+}
+
+
+.middle > h2 {
+  font-size: 1em;
+  line-height: 0px;
+  font-weight: 100;
+  letter-spacing: 0.25em;
+  font-style: italic;
+}
+
