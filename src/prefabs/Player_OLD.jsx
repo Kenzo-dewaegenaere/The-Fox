@@ -1,8 +1,8 @@
 import { useSphere } from "@react-three/cannon";
 import React, { useEffect, useRef, useState } from "react";
-//import { useFrame, useThree } from "react-three-fiber";
+import { useFrame, useThree } from "react-three-fiber";
 
-import { useFrame, useThree } from "@react-three/fiber";
+//import { useFrame, useThree } from "@react-three/fiber";
 import { Vector3 } from "three";
 import { useKeyboardInput } from "../hooks/useKeyboardInput";
 import { useMouseInput } from "../hooks/useMouseInput";

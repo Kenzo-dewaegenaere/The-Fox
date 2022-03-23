@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { /*useCallback,*/ useEffect, useState } from "react";
 import { useBox } from "@react-three/cannon";
 import niceColors from "nice-color-palettes";
 const paletteIndex = 8;
 
 export const Cube = (props) => {
   const [color, setColor] = useState("white");
-  const [cubeRef, api] = useBox(() => ({
+  const [cubeRef, /*api*/] = useBox(() => ({
     mass: 1,
     args: [0.5, 0.5, 0.5],
     material: {
@@ -19,7 +19,7 @@ export const Cube = (props) => {
     () =>
       setColor(
         niceColors[paletteIndex][
-          Math.floor(Math.random() * niceColors[paletteIndex].length)
+        Math.floor(Math.random() * niceColors[paletteIndex].length)
         ]
       ),
     []

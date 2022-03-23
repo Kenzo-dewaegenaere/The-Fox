@@ -1,17 +1,11 @@
 import { Physics } from "@react-three/cannon";
-import React, { Suspense, useEffect, useRef } from "react";
-import { extend, useThree, useFrame } from "react-three-fiber";
+import React, { useEffect, useRef } from "react";
+import { extend, useThree } from "react-three-fiber";
 import { Plane } from "../prefabs/Plane";
-import { Player } from "../prefabs/Player";
+import { Player } from "../prefabs/Player_OLD";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls";
 import { Cube } from "../prefabs/Cube";
-import {
-  EffectComposer,
-  DepthOfField,
-  Bloom,
-  Noise,
-  Vignette,
-} from "@react-three/postprocessing";
+
 
 extend({ PointerLockControls });
 

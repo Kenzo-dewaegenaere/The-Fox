@@ -1,7 +1,8 @@
 import "../styles.css";
 import React, { Suspense, useEffect, useRef } from "react";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls";
-import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
+import { Canvas, extend, useThree } from "@react-three/fiber";
+import { Html, Stars, Stats } from "@react-three/drei";
 import {
   EffectComposer,
   DepthOfField,
@@ -9,9 +10,9 @@ import {
   Noise,
   Vignette,
 } from "@react-three/postprocessing";
-import { Html, Stars, Stats } from "@react-three/drei";
-import GameScene from "../scene/GameScene";
+//import GameScene from "../scene/GameScene";
 import Fox from "../components/Fox";
+import { Plane } from "../prefabs/Plane";
 
 extend({ PointerLockControls });
 
@@ -23,6 +24,8 @@ export default function Game() {
         <PostProcessing />
         <Lights />
         <Stars />
+
+        <Plane />
         <Scene />
       </Canvas>
     </>
@@ -40,6 +43,8 @@ const Scene = () => {
         }
       >
         <Fox scale={0.1} position={[0, -1.5, 4]} rotation={[-0.1, 0, 0]} />
+
+
       </Suspense>
       <Stats />
     </>

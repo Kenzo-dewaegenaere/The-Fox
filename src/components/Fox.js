@@ -1,20 +1,20 @@
-import React, { useRef, useState, useEffect } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import React, { useRef /*, useState, useEffect */ } from "react";
+import { useGLTF /*useAnimations */ } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import lerp from "lerp";
 
 export default function Model({ ...props }) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/fox/scene.gltf");
-  const { actions } = useAnimations(animations, group);
-  const [name, setName] = useState("Fox_Idle");
+  const { nodes, materials, /*animations*/ } = useGLTF("/fox/scene.gltf");
+  //const { actions } = useAnimations(animations, group);
+  // const [name, setName] = useState("Fox_Idle");
 
-  useEffect(() => {
-    actions[name].reset().fadeIn(0.5).play();
-    return () => actions[name].fadeOut(0.5);
-  }, [name]);
+  //  useEffect(() => {
+  //    actions[name].reset().fadeIn(0.5).play();
+  //    return () => actions[name].fadeOut(0.5);
+  //  }, [name]);
 
-  useFrame(({ clock, mouse }) => {
+  useFrame(({ mouse }) => {
     group.current.rotation.y = lerp(
       group.current.rotation.y,
       mouse.x * (Math.PI / 5),
@@ -53,9 +53,9 @@ export default function Model({ ...props }) {
           <group name="FoxTransform" rotation={[-Math.PI / 2, 0, 0]}>
             <primitive object={nodes._rootJoint} />
             <skinnedMesh
-              onClick={(e) => setName("Fox_Idle")}
-              onPointerEnter={(e) => setName("Fox_Sit_Yes")}
-              onPointerLeave={(e) => setName("Fox_Idle")}
+              // onClick={(e) => setName("Fox_Idle")}
+              //onPointerEnter={(e) => setName("Fox_Sit_Yes")}
+              //onPointerLeave={(e) => setName("Fox_Idle")}
               geometry={nodes.Object_9.geometry}
               material={materials["08_-_Default"]}
               skeleton={nodes.Object_9.skeleton}
