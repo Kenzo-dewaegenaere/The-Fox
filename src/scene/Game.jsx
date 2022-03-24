@@ -1,8 +1,8 @@
 import "../styles.css";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
-import { Html, Stars, Stats, PerspectiveCamera, Billboard, Text, PositionalAudio } from "@react-three/drei";
-import { Physics, usePlane, useSphere, useBox, Debug } from "@react-three/cannon";
+import { Html, Stars, Stats, PerspectiveCamera, Billboard, Text } from "@react-three/drei";
+import { Physics, usePlane, useSphere, useBox } from "@react-three/cannon";
 import {
   EffectComposer,
   DepthOfField,
@@ -343,6 +343,7 @@ const Player = () => {
 
   const pos = useRef([0, 0, 0])
 
+
   useEffect(() => api.position.subscribe(v => pos.current = v), [])
 
   useFrame((canvasState, delta) => {
@@ -440,13 +441,12 @@ const Player = () => {
             id: now,
             position: [bulletPosition[0], bulletPosition[1] + .5, bulletPosition[2]],
             forward: [bulletDirection.x, bulletDirection.y, bulletDirection.z],
+            name: "bullet",
           },
         ]);
-
         if (bullets.length > 10) {
           setBullets([]);
         }
-        console.log(bullets.onColide);
 
       }
     }
@@ -459,6 +459,7 @@ const Player = () => {
       {bullets.map((bullet) => {
         return (
           <Bullet
+
             key={bullet.id}
             velocity={bullet.forward}
             position={bullet.position}
