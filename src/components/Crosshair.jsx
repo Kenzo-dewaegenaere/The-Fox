@@ -7,7 +7,9 @@ const CrosshairStyle = styled.div`
   background-color: white;
   border-radius: 50%;
   border: solid 1px gray;
-  margin: auto;
+  margin-top 45vh;
+  margin-left: auto;
+   margin-right: auto;
 `;
 
 export const Crosshair = () => {

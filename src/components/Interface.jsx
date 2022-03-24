@@ -11,6 +11,6 @@ const ScreenContainer = styled.div`
   z-index: 100;
 `;
 
-export const UI = ({ children }) => {
+export const Interface = ({ children }) => {
   return <ScreenContainer>{children}</ScreenContainer>;
 };

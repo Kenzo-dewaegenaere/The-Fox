@@ -2,9 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
-import { Canvas } from "react-three-fiber";
-import { DefaultScene } from "./scene/DefaultScene";
-import TestScene from "./scene/TestScene";
+import Game from "./scene/Game";
 import "./styles.css";
 
 //import { Crosshair } from "./components/Crosshair";
@@ -15,15 +13,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route
-        path="game"
-        element={
-          <Canvas shadowMap>
-            <DefaultScene />
-          </Canvas>
-        }
-      />
-      <Route path="test" element={<TestScene />} />
+      <Route path="Game" element={<Game />} />
     </Routes>
   </BrowserRouter>,
   rootElement
