@@ -1,7 +1,7 @@
 import "../styles.css";
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
-import { Html, Stars, Stats, PerspectiveCamera, Billboard, Text } from "@react-three/drei";
+import { Canvas, extend, useThree, useFrame, useLoader } from "@react-three/fiber";
+import { Html, Stars, Stats, PerspectiveCamera, Billboard, Text, PositionalAudio } from "@react-three/drei";
 import { Physics, usePlane, useSphere, useBox } from "@react-three/cannon";
 import {
   EffectComposer,
@@ -54,8 +54,9 @@ export default function Game() {
 }
 
 const Scene = () => {
-  const chickenBody = useRef();
 
+
+  //console.log(chickenHealth);
 
   return (
     <>
@@ -83,7 +84,6 @@ const Scene = () => {
           <Objects />
           <Mountains scale={.6} />
           <Edges />
-
         </Physics>
         <UI />
         <fog attach="fog" args={["black", 0, 15]} />
@@ -474,4 +474,3 @@ const Player = () => {
     </>
   );
 };
-

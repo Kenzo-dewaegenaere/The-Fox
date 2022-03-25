@@ -20,14 +20,14 @@ export default function Model({ ...props }) {
         <group rotation={[-0.27, 0.6, 1.93]} />
         <group scale={0.17}>
           <mesh
-            castShadow
-            receiveShadow
+
+
             geometry={nodes.Plane_0.geometry}
             material={materials["Material.001"]}
           />
           <mesh
-            castShadow
-            receiveShadow
+
+
             geometry={nodes.Plane_1.geometry}
             material={materials["Material.002"]}
           />
