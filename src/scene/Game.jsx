@@ -28,6 +28,7 @@ import Chicken from "../components/Chicken";
 import Mountain from "../components/Mountain";
 import Explosion from "../components/Explosion";
 
+
 //UI
 import { Crosshair } from "../components/Crosshair";
 import { Interface } from "../components/Interface";
@@ -74,8 +75,9 @@ const Scene = () => {
           iterations={50}
           broadphase={"SAP"}>
 
-          <Chicken scale={.3} position={[0, -.4, 0]} />
-          <Explosion scale={.3} position={[0, -.4, 0]} />
+          <Chicken scale={.3} position={[0, -.4, 0]} >
+            <Explosion scale={20} />
+          </Chicken>
           <Player />
 
           <Plane />

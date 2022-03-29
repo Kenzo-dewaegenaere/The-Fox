@@ -5,6 +5,7 @@ import { useBox } from "@react-three/cannon";
 import create from 'zustand'
 
 
+
 export default function Model({ ...props }) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/chicken/scene.gltf");
@@ -19,6 +20,16 @@ export default function Model({ ...props }) {
   //    doDamage: (e) => set(state => ({ chickenHP: state.chickenHP - 25 })),
   //  }))
   //  console.log(useStore);
+
+
+  //  console.log(actions);
+
+  //  useLayoutEffect(() => {
+  //    actions[name].reset().fadeIn(0.5).play();
+  //    return () => actions[name].fadeOut(0.5);
+  //  }, [name]);
+
+
 
   const [ref, api] = useBox(() => ({
     mass: 1,
@@ -41,26 +52,29 @@ export default function Model({ ...props }) {
 
   useFrame(() => {
 
-
-
-    console.log(chickenHP);
-    // if (chickenHP <= 0) {
-    //  chickenState = false;
-    // }
+    if (chickenHP <= 0) {
+      chickenState = false;
+    }
   });
 
-  //  console.log(actions);
 
-  //  useLayoutEffect(() => {
-  //    actions[name].reset().fadeIn(0.5).play();
-  //    return () => actions[name].fadeOut(0.5);
-  //  }, [name]);
+  const renderElement = () => {
 
+    useFrame(() => {
 
+      if (chickenHP < 100) {
+        console.log(chickenHP);
+
+      }
+
+    });
+
+  }
 
 
   return (
     <>
+      {renderElement()}
       <mesh ref={ref}>
         <group ref={group} {...props} dispose={null}>
           <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
@@ -71,6 +85,7 @@ export default function Model({ ...props }) {
                 material={nodes.Object_6.material}
                 skeleton={nodes.Object_6.skeleton}
               />
+
               <skinnedMesh
                 geometry={nodes.Object_7.geometry}
                 material={nodes.Object_7.material}
