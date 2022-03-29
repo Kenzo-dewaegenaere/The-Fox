@@ -74,20 +74,21 @@ const Scene = () => {
           tolerance={0}
           iterations={50}
           broadphase={"SAP"}>
+          <Debug>
+            <Chicken scale={.3} position={[0, -.4, 0]} >
+              <Explosion scale={20} />
+            </Chicken>
+            <Player />
 
-          <Chicken scale={.3} position={[0, -.4, 0]} >
-            <Explosion scale={20} />
-          </Chicken>
-          <Player />
+            <Plane />
 
-          <Plane />
-
-          <Cube position={[0, 0, -5]} layers={1} />
-          <Cube position={[0.6, 0, -5]} />
-          <Cube position={[-0.6, 0, -5]} />
-          <Objects />
-          <Mountains scale={.6} />
-          <Edges />
+            <Cube position={[0, 0, -5]} layers={1} />
+            <Cube position={[0.6, 0, -5]} />
+            <Cube position={[-0.6, 0, -5]} />
+            <Objects />
+            <Mountains scale={.6} />
+            <Edges />
+          </Debug>
         </Physics>
         <UI />
         <fog attach="fog" args={["black", 0, 15]} />
@@ -183,17 +184,7 @@ const Edges = () => {
     mass: 1,
     type: "Static",
     args: [125, 20, 2],
-    position: [0, -2, -10],
-    material: {
-      friction: 1,
-    },
-  }));
-
-  const [Edge_two] = useBox(() => ({
-    mass: 1,
-    type: "Static",
-    args: [125, 20, 2],
-    position: [0, -2, 40],
+    position: [0, Math.PI / 2, -10],
     material: {
       friction: 1,
     },
@@ -203,8 +194,19 @@ const Edges = () => {
     mass: 1,
     type: "Static",
     args: [125, 20, 2],
-    position: [0, -2, 40],
-    rotation: [0, 90, 0],
+    position: [-10, -2, 52],
+    rotation: [0, Math.PI / 2, 0],
+    material: {
+      friction: 1,
+    },
+  }));
+
+  const [Edge_two] = useBox(() => ({
+    mass: 1,
+    type: "Static",
+    args: [125, 20, 2],
+    position: [50, -2, 52],
+    rotation: [0, Math.PI / 2, 0],
     material: {
       friction: 1,
     },
@@ -214,12 +216,13 @@ const Edges = () => {
     mass: 1,
     type: "Static",
     args: [125, 20, 2],
-    position: [50, -2, 40],
-    rotation: [0, 90, 0],
+    position: [0, Math.PI / 2, 60],
     material: {
       friction: 1,
     },
   }));
+
+
 
 
 
@@ -243,8 +246,8 @@ const PostProcessing = () => {
           bokehScale={2}
           height={480}
         />
-        <Bloom luminanceThreshold={0} luminanceSmoothing={2} height={300} />
-        <Noise opacity={0.12} />
+        <Bloom luminanceThreshold={0} luminanceSmoothing={9} height={300} />
+        <Noise opacity={0.05} />
         <Vignette eskil={false} offset={0.1} darkness={1.5} />
       </EffectComposer>
     </>
