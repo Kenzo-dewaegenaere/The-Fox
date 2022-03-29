@@ -1,8 +1,8 @@
 import "../styles.css";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, extend, useThree, useFrame, useLoader } from "@react-three/fiber";
-import { Html, Stars, Stats, PerspectiveCamera, Billboard, Text, PositionalAudio } from "@react-three/drei";
-import { Physics, usePlane, useSphere, useBox } from "@react-three/cannon";
+import { Html, Stars, Stats, PerspectiveCamera, Billboard, Text } from "@react-three/drei";
+import { Physics, usePlane, useSphere, useBox, Debug } from "@react-three/cannon";
 import {
   EffectComposer,
   DepthOfField,
@@ -20,7 +20,7 @@ import { useMouseInput } from "../hooks/useMouseInput";
 import { useVariable } from "../hooks/useVariable";
 
 //prefabs
-import { Bullet } from "../prefabs/Bullet";
+import { NerfBullet } from "../prefabs/NerfBullet";
 import Objects from "../prefabs/Objects";
 
 //Components
@@ -74,20 +74,21 @@ const Scene = () => {
           tolerance={0}
           iterations={50}
           broadphase={"SAP"}>
+          <Debug>
+            <Chicken scale={.3} position={[0, -.4, 0]} >
+              <Explosion scale={20} />
+            </Chicken>
+            <Player />
 
-          <Chicken scale={.3} position={[0, -.4, 0]} >
-            <Explosion scale={20} />
-          </Chicken>
-          <Player />
+            <Plane />
 
-          <Plane />
-
-          <Cube position={[0, 0, -5]} layers={1} />
-          <Cube position={[0.6, 0, -5]} />
-          <Cube position={[-0.6, 0, -5]} />
-          <Objects />
-          <Mountains scale={.6} />
-          <Edges />
+            <Cube position={[0, 0, -5]} layers={1} />
+            <Cube position={[0.6, 0, -5]} />
+            <Cube position={[-0.6, 0, -5]} />
+            <Objects />
+            <Mountains scale={.6} />
+            <Edges />
+          </Debug>
         </Physics>
         <UI />
         <fog attach="fog" args={["black", 0, 15]} />
@@ -462,7 +463,7 @@ const Player = () => {
 
       {bullets.map((bullet) => {
         return (
-          <Bullet
+          <NerfBullet
 
             key={bullet.id}
             velocity={bullet.forward}
