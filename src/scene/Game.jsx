@@ -74,21 +74,20 @@ const Scene = () => {
           tolerance={0}
           iterations={50}
           broadphase={"SAP"}>
-          <Debug>
-            <Chicken scale={.3} position={[0, -.4, 0]} >
-              <Explosion scale={20} />
-            </Chicken>
-            <Player />
 
-            <Plane />
+          <Chicken scale={.3} position={[0, -.4, 0]} >
+            <Explosion scale={20} />
+          </Chicken>
+          <Player />
 
-            <Cube position={[0, 0, -5]} layers={1} />
-            <Cube position={[0.6, 0, -5]} />
-            <Cube position={[-0.6, 0, -5]} />
-            <Objects />
-            <Mountains scale={.6} />
-            <Edges />
-          </Debug>
+          <Plane />
+
+          <Cube position={[0, 0, -5]} layers={1} />
+          <Cube position={[0.6, 0, -5]} />
+          <Cube position={[-0.6, 0, -5]} />
+          <Objects />
+          <Mountains scale={.6} />
+          <Edges />
         </Physics>
         <UI />
         <fog attach="fog" args={["black", 0, 15]} />
