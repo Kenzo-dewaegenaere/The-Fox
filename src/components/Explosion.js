@@ -6,28 +6,23 @@ source: https://sketchfab.com/3d-models/timeframe-explosion-9e73437350dc4bcab9b2
 title: Timeframe Explosion
 */
 
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { useFrame } from "@react-three/fiber";
+import { LoopOnce } from 'three';
 
 export default function Model({ ...props }) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/timeframe_explosion/scene.gltf')
-  const { actions } = useAnimations(animations, group)
-
-
-  console.log(actions);
+  const { ref, mixer, names, actions, clips } = useAnimations(animations, group)
   const [name, setName] = useState("Explosion")
+
+  
+
+
 
   useFrame(() => {
 
-    let animation = true;
-    if (animation) {
-
-      actions[name].play()
-
-      animation = false;
-    }
 
   })
 

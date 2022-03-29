@@ -1,7 +1,7 @@
 import "../styles.css";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, extend, useThree, useFrame, useLoader } from "@react-three/fiber";
-import { Html, Stars, Stats, PerspectiveCamera, Billboard, Text } from "@react-three/drei";
+import { Html, Stars, Stats, PerspectiveCamera, Billboard, Text, Loader } from "@react-three/drei";
 import { Physics, usePlane, useSphere, useBox, Debug } from "@react-three/cannon";
 import {
   EffectComposer,
@@ -51,6 +51,7 @@ export default function Game() {
         <Stars />
         <Scene />
       </Canvas>
+      <Loader />
     </>
   );
 }
@@ -63,10 +64,7 @@ const Scene = () => {
   return (
     <>
       <Suspense
-        fallback={
-          <Html center className="loader">
-            LOADING
-          </Html>
+        fallback={null
         }
       >
         <Physics
@@ -75,10 +73,10 @@ const Scene = () => {
           iterations={50}
           broadphase={"SAP"}>
           <Debug>
-            <Chicken scale={.3} position={[0, -.4, 0]} >
-              <Explosion scale={20} />
-            </Chicken>
+            <Chicken scale={.3} position={[0, -.4, 0]} />
+
             <Player />
+            <Explosion scale={1} position={[0, -.4, -8]} />
 
             <Plane />
 

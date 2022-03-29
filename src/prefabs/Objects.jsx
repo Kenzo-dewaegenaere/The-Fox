@@ -4,6 +4,7 @@ import Mushroom from "../components/Mushrooms";
 import Flower from "../components/Flowers";
 import Grass from "../components/Grass";
 
+
 export default function Objects() {
 
     let treesAmount = 85;
@@ -17,6 +18,7 @@ export default function Objects() {
     let flowers = [];
     let grass = [];
     let mushrooms = [];
+
 
     for (var i = 0; i < treesAmount; i++) {
         trees.push(<Tree key={i} scale={1} position={[Math.random() * 75, 0, Math.random() * 75]} />);
@@ -36,6 +38,7 @@ export default function Objects() {
         mushrooms.push(<Mushroom key={i} scale={.01} position={[Math.random() * 75, 0, Math.random() * 75]} />);
     }
 
+
     return (
         <>
             {trees}
@@ -43,6 +46,7 @@ export default function Objects() {
             {flowers}
             {grass}
             {mushrooms}
+
         </>
     );
 
