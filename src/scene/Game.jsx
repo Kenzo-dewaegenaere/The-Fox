@@ -99,13 +99,16 @@ const Scene = () => {
 };
 
 const UI = () => {
+
+  //Text ui ( to explain game mechanics)
+
   return (
     <>
       <Billboard
         follow={false}
         lockX={false}
         lockY={false}
-        lockZ={false} // Lock the rotation on the z axis (default=false)
+        lockZ={false}
       >
         <Text position={[-0.6, 5.5, -15]} fontSize={1}>Welcome to the barbaren game,</Text>
         <Text position={[-0.6, 4.5, -15]} fontSize={1}>find and kill the evil chicken!</Text>
@@ -119,6 +122,9 @@ const UI = () => {
 
 
 const PointerLockControl = () => {
+
+  //camera and pointerlock handlers
+
   const { camera, gl } = useThree();
   const controls = useRef();
 
@@ -142,6 +148,9 @@ const PointerLockControl = () => {
 };
 
 const Lights = () => {
+
+  // lights
+
   return (
     <>
       <directionalLight position={[3, 0, 3]} intensity={0.5} castShadow />
@@ -165,6 +174,9 @@ const Lights = () => {
 };
 
 const Mountains = () => {
+
+  //background fillers making the scen looking more realistic
+
   return (
     <>
       <Mountain position={[150, -5, -5]} />
@@ -180,6 +192,7 @@ const Mountains = () => {
 
 const Edges = () => {
 
+  //invisible edges, creates an arena effect. Maybe adding fences later
   const [Edge_one] = useBox(() => ({
     mass: 1,
     type: "Static",
