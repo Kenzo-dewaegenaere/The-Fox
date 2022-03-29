@@ -52,6 +52,8 @@ export default function Model({ ...props }) {
 
   useFrame(() => {
 
+
+
     if (chickenHP <= 0) {
       chickenState = false;
     }

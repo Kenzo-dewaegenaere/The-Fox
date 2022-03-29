@@ -14,10 +14,13 @@ import { Vector3, Raycaster } from "three";
 import { PointerLockControls } from "three/examples/jsm/controls/PointerLockControls";
 import niceColors from "nice-color-palettes";
 
+
 //Hooks
 import { useKeyboardInput } from "../hooks/useKeyboardInput";
 import { useMouseInput } from "../hooks/useMouseInput";
 import { useVariable } from "../hooks/useVariable";
+
+
 
 //prefabs
 import { NerfBullet } from "../prefabs/NerfBullet";
@@ -32,7 +35,6 @@ import Explosion from "../components/Explosion";
 //UI
 import { Crosshair } from "../components/Crosshair";
 import { Interface } from "../components/Interface";
-
 
 
 
@@ -79,13 +81,12 @@ const Scene = () => {
             <Explosion scale={1} position={[0, -.4, -8]} />
 
             <Plane />
-
+            <Edges />
             <Cube position={[0, 0, -5]} layers={1} />
             <Cube position={[0.6, 0, -5]} />
             <Cube position={[-0.6, 0, -5]} />
             <Objects />
             <Mountains scale={.6} />
-            <Edges />
           </Debug>
         </Physics>
         <UI />
@@ -492,3 +493,6 @@ const Player = () => {
     </>
   );
 };
+
+
+
