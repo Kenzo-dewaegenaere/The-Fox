@@ -26,6 +26,7 @@ import Objects from "../prefabs/Objects";
 //Components
 import Chicken from "../components/Chicken";
 import Mountain from "../components/Mountain";
+import Explosion from "../components/Explosion";
 
 //UI
 import { Crosshair } from "../components/Crosshair";
@@ -74,6 +75,7 @@ const Scene = () => {
           broadphase={"SAP"}>
 
           <Chicken scale={.3} position={[0, -.4, 0]} />
+          <Explosion scale={.3} position={[0, -.4, 0]} />
           <Player />
 
           <Plane />

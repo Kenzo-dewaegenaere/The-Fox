@@ -8,8 +8,8 @@ export default function Objects() {
 
     let treesAmount = 85;
     let rockAmount = 30;
-    let flowerAmount = 20;
-    let grassAmount = 25;
+    let flowerAmount = 40;
+    let grassAmount = 55;
     let mushroomAmount = 30;
 
     let trees = [];

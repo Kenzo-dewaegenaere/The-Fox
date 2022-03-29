@@ -11,13 +11,14 @@ export default function Model({ ...props }) {
   const [name, setName] = useState("chicken_with_animation_1");
   const { actions } = useAnimations(animations, group);
 
-  let chickenHealth = 100;
   let chickenState = true;
+  let chickenHP = 100;
 
-  const useStore = create(set => ({
-    checkenHealth: 100,
-    doChickenDamage: (e) => set(state => ({ checkenHealth: state.checkenHealth - 25 })),
-  }))
+  //  const useStore = create(set => ({
+  //    chickenHP: 100,
+  //    doDamage: (e) => set(state => ({ chickenHP: state.chickenHP - 25 })),
+  //  }))
+  //  console.log(useStore);
 
   const [ref, api] = useBox(() => ({
     mass: 1,
@@ -25,22 +26,27 @@ export default function Model({ ...props }) {
     args: [.8, .8, .8],
     fixedRotation: true,
     position: [4, .2, 2],
-    onCollide: (e) => doChickenDamage(e),
+    onCollide: (e) => CheckImpact(e),
   }));
 
-  const doChickenDamage = (e) => {
+  const CheckImpact = (e) => {
 
     if (e.body.name === "bullet") {
-      chickenHealth = chickenHealth - 25;
+      chickenHP = chickenHP - 25;
+
     }
 
   };
 
+
   useFrame(() => {
 
-    if (chickenHealth <= 0) {
-      chickenState = false;
-    }
+
+
+    console.log(chickenHP);
+    // if (chickenHP <= 0) {
+    //  chickenState = false;
+    // }
   });
 
   //  console.log(actions);
