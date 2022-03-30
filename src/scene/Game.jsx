@@ -19,6 +19,7 @@ import niceColors from "nice-color-palettes";
 import { useKeyboardInput } from "../hooks/useKeyboardInput";
 import { useMouseInput } from "../hooks/useMouseInput";
 import { useVariable } from "../hooks/useVariable";
+import { useYuka } from "../hooks/useYuka";
 
 
 
@@ -60,9 +61,6 @@ export default function Game() {
 
 const Scene = () => {
 
-
-  //console.log(chickenHealth);
-
   return (
     <>
       <Suspense
@@ -74,20 +72,20 @@ const Scene = () => {
           tolerance={0}
           iterations={50}
           broadphase={"SAP"}>
-          <Debug>
-            <Chicken scale={.3} position={[0, -.4, 0]} />
 
-            <Player />
-            <Explosion scale={1} position={[0, -.4, -8]} />
+          <Chicken scale={.3} position={[0, -.4, 0]} />
 
-            <Plane />
-            <Edges />
-            <Cube position={[0, 0, -5]} layers={1} />
-            <Cube position={[0.6, 0, -5]} />
-            <Cube position={[-0.6, 0, -5]} />
-            <Objects />
-            <Mountains scale={.6} />
-          </Debug>
+          <Player />
+          <Explosion scale={10} position={[0, -.4, -8]} />
+
+          <Plane />
+          <Edges />
+          <Cube position={[0, 0, -5]} layers={1} />
+          <Cube position={[0.6, 0, -5]} />
+          <Cube position={[-0.6, 0, -5]} />
+          <Objects />
+          <Mountains scale={.6} />
+
         </Physics>
         <UI />
         <fog attach="fog" args={["black", 0, 15]} />
@@ -443,9 +441,6 @@ const Player = () => {
       }
     }
 
-
-
-
     const bulletDirection = cameraDirection.clone().multiplyScalar(bulletSpeed);
     const bulletPosition = pos.current;
 
@@ -461,11 +456,12 @@ const Player = () => {
             position: [bulletPosition[0], bulletPosition[1] + .5, bulletPosition[2]],
             forward: [bulletDirection.x, bulletDirection.y, bulletDirection.z],
             name: "bullet",
+
           },
         ]);
-        if (bullets.length > 10) {
-          setBullets([]);
-        }
+        //if (bullets.length > 10) {
+        //  setBullets([]);
+        //}
 
       }
     }
@@ -482,6 +478,7 @@ const Player = () => {
             key={bullet.id}
             velocity={bullet.forward}
             position={bullet.position}
+
           />
 
         );

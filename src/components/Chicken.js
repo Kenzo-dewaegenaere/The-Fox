@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useBox } from "@react-three/cannon";
@@ -15,19 +15,12 @@ export default function Model({ ...props }) {
   let chickenState = true;
   let chickenHP = 100;
 
-  //  const useStore = create(set => ({
-  //    chickenHP: 100,
-  //    doDamage: (e) => set(state => ({ chickenHP: state.chickenHP - 25 })),
-  //  }))
-  //  console.log(useStore);
-
-
-  //  console.log(actions);
-
   //  useLayoutEffect(() => {
   //    actions[name].reset().fadeIn(0.5).play();
   //    return () => actions[name].fadeOut(0.5);
   //  }, [name]);
+
+
 
 
 
@@ -42,61 +35,46 @@ export default function Model({ ...props }) {
 
   const CheckImpact = (e) => {
 
+
     if (e.body.name === "bullet") {
-      chickenHP = chickenHP - 25;
-
+      chickenHP = chickenHP - 5;
+      console.log(chickenHP);
     }
-
-  };
-
-
-  useFrame(() => {
-
-
 
     if (chickenHP <= 0) {
       chickenState = false;
     }
-  });
+  };
 
 
-  const renderElement = () => {
 
-    useFrame(() => {
-
-      if (chickenHP < 100) {
-        console.log(chickenHP);
-
-      }
-
-    });
-
-  }
 
 
   return (
     <>
-      {renderElement()}
-      <mesh ref={ref}>
-        <group ref={group} {...props} dispose={null}>
-          <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-            <group rotation={[Math.PI / 2, 0, 0]}>
-              <primitive object={nodes._rootJoint} />
-              <skinnedMesh
-                geometry={nodes.Object_6.geometry}
-                material={nodes.Object_6.material}
-                skeleton={nodes.Object_6.skeleton}
-              />
 
-              <skinnedMesh
-                geometry={nodes.Object_7.geometry}
-                material={nodes.Object_7.material}
-                skeleton={nodes.Object_7.skeleton}
-              />
+      {chickenState ? (
+        <mesh ref={ref}>
+          <group ref={group} {...props} dispose={null}>
+            <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
+              <group rotation={[Math.PI / 2, 0, 0]}>
+                <primitive object={nodes._rootJoint} />
+                <skinnedMesh
+                  geometry={nodes.Object_6.geometry}
+                  material={nodes.Object_6.material}
+                  skeleton={nodes.Object_6.skeleton}
+                />
+
+                <skinnedMesh
+                  geometry={nodes.Object_7.geometry}
+                  material={nodes.Object_7.material}
+                  skeleton={nodes.Object_7.skeleton}
+                />
+              </group>
             </group>
           </group>
-        </group>
-      </mesh>
+        </mesh>
+      ) : null}
     </>
   );
 }
