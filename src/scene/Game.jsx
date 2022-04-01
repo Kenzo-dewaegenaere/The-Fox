@@ -30,8 +30,6 @@ import Objects from "../prefabs/Objects";
 //Components
 import Chicken from "../components/Chicken";
 import Mountain from "../components/Mountain";
-import Explosion from "../components/Explosion";
-
 
 //UI
 import { Crosshair } from "../components/Crosshair";
@@ -76,7 +74,7 @@ const Scene = () => {
           <Chicken scale={.3} position={[0, -.4, 0]} />
 
           <Player />
-          <Explosion scale={10} position={[0, -.4, -8]} />
+          
 
           <Plane />
           <Edges />
@@ -108,7 +106,7 @@ const UI = () => {
         lockZ={false}
       >
         <Text position={[-0.6, 5.5, -15]} fontSize={1}>Welcome to the barbaren game,</Text>
-        <Text position={[-0.6, 4.5, -15]} fontSize={1}>find and kill the evil chicken!</Text>
+        <Text position={[-0.6, 4.5, -15]} fontSize={1}>find and shoot the evil chicken!</Text>
 
         <Text position={[-0.6, 2.5, -15]} fontSize={.5}>use your keyboard and mouse to navigate</Text>
       </Billboard>
