@@ -8,6 +8,7 @@ title: explosion
 
 import React, { useRef, useState, useEffect } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 
 export default function Model({ ...props }) {
   const group = useRef();
@@ -17,10 +18,11 @@ export default function Model({ ...props }) {
   const [name, setName] = useState("Take_001");
 
 
-  useEffect(() => {
-    actions[name].play();
-    return () => actions[name];
-  }, [name]);
+  useFrame(() => {
+    //actions[name].play();
+  });
+
+
 
 
 
@@ -1185,7 +1187,7 @@ export default function Model({ ...props }) {
         </group>
       </group>
     </group>
-  )
-}
+  );
 
+}
 useGLTF.preload('/explosion/scene.gltf');

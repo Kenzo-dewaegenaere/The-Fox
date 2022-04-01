@@ -8,20 +8,19 @@ import create from 'zustand'
 
 export default function Model({ ...props }) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/chicken/scene.gltf");
-  const [name, setName] = useState("chicken_with_animation_1");
+  const { nodes, animations } = useGLTF("/chicken/scene.gltf");
+  const [name, setName] = useState("chicken_with_animation_2");
   const { actions } = useAnimations(animations, group);
 
   let chickenState = true;
   let chickenHP = 100;
 
-  //  useLayoutEffect(() => {
-  //    actions[name].reset().fadeIn(0.5).play();
-  //    return () => actions[name].fadeOut(0.5);
-  //  }, [name]);
+  useFrame(() => {
+    //actions[name].play();
+  });
 
 
-
+  console.log(actions);
 
 
   const [ref, api] = useBox(() => ({
@@ -41,8 +40,10 @@ export default function Model({ ...props }) {
       console.log(chickenHP);
     }
 
-    if (chickenHP <= 0) {
+    if (chickenHP <= 95) {
       chickenState = false;
+
+
     }
   };
 
