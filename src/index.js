@@ -22,8 +22,8 @@ render(
       <Route path="/keyboardSelection" element={<KeyboardSelection />} />
       <Route path="The-Fox" element={<Game />} />
       <Route path="De-Vos" element={<GameNL />} />
-      <Route path="Completed" element={<Completed />} />
       <Route path="EndScene" element={<EndScene />} />
+      <Route path="Completed" element={<Completed />} />
     </Routes>
   </BrowserRouter>,
   rootElement

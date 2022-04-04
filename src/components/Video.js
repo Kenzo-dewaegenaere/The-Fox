@@ -50,7 +50,7 @@ const GoNext = () => {
   return (
     <>
       <div className="end-scene__pos">
-        <a href="/" className="end-scene__button">
+        <a href="/completed" className="end-scene__button">
           go next!
         </a>
       </div>
