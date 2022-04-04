@@ -3,8 +3,10 @@ import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Game from "./scene/Game";
+import GameNL from "./scene/GameNL";
 import Completed from "./scene/Completed";
 import EndScene from "./scene/EndScene";
+import KeyboardSelection from "./scene/KeyboardSelection";
 import "./styles.css";
 
 //import { Crosshair } from "./components/Crosshair";
@@ -17,7 +19,9 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="Game" element={<Game />} />
+      <Route path="/keyboardSelection" element={<KeyboardSelection />} />
+      <Route path="The-Fox" element={<Game />} />
+      <Route path="De-Vos" element={<GameNL />} />
       <Route path="Completed" element={<Completed />} />
       <Route path="EndScene" element={<EndScene />} />
     </Routes>

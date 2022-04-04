@@ -29,9 +29,9 @@ body,
   overflow: hidden;
 }
 
-canvas{
+canvas {
   z-index: -10;
-  
+
 }
 
 body {
@@ -62,13 +62,13 @@ body {
   text-align: center;
 }
 
-.header > span {
+.header>span {
   padding: 0 3.25em;
   letter-spacing: 0.4em;
   position: relative;
 }
 
-.header > span.active::after {
+.header>span.active::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -80,7 +80,7 @@ body {
 }
 
 .header_player {
-  
+
   z-index: 3;
   position: absolute;
   top: 20em;
@@ -93,13 +93,13 @@ body {
   text-align: center;
 }
 
-.header_player > span {
+.header_player>span {
   padding: 0 3.25em;
   letter-spacing: 0.4em;
   position: relative;
 }
 
-.header_player > span.active::after {
+.header_player>span.active::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -108,14 +108,29 @@ body {
   width: 20px;
   height: 2px;
   background: white;
-  
+
 }
-.play__button{
+
+.play__button {
   text-decoration: none;
   color: white;
   font-size: 3rem;
+
 }
-.play__button:hover{
+
+.play__button:hover {
+  opacity: 50%;
+  text-decoration: none;
+}
+
+.selection__button {
+  text-decoration: none;
+  color: white;
+  font-size: 3rem;
+  margin: 5rem;
+}
+
+.selection__button:hover {
   opacity: 50%;
   text-decoration: none;
 }
@@ -132,13 +147,13 @@ body {
   width: 100%;
 }
 
-.middle > h1 {
+.middle>h1 {
   line-height: 0.9em;
   font-weight: 100;
 }
 
 
-.middle > h2 {
+.middle>h2 {
   font-size: 1em;
   line-height: 0px;
   font-weight: 100;
@@ -146,7 +161,7 @@ body {
   font-style: italic;
 }
 
-.end-scene__pos{
+.end-scene__pos {
   position: absolute;
   top: 85%;
   left: 80%;
@@ -155,12 +170,13 @@ body {
   z-index: 100;
 }
 
-.end-scene__pos a{
-text-decoration: none;
-font-size: 5rem;
-color: white;
+.end-scene__pos a {
+  text-decoration: none;
+  font-size: 5rem;
+  color: white;
 }
-.end-scene__pos a:hover{
+
+.end-scene__pos a:hover {
   opacity: 50%;
   text-decoration: none;
 }

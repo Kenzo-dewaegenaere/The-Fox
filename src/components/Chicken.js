@@ -2,9 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useBox } from "@react-three/cannon";
-import create from 'zustand'
-
-
 
 export default function Model({ ...props }) {
   const group = useRef();
@@ -19,8 +16,6 @@ export default function Model({ ...props }) {
     //actions[name].play();
   });
 
-
-  console.log(actions);
 
 
   const [ref, api] = useBox(() => ({
@@ -40,16 +35,14 @@ export default function Model({ ...props }) {
       console.log(chickenHP);
     }
 
-    if (chickenHP <= 95) {
+    if (chickenHP <= 85) {
       chickenState = false;
+
+      window.location.href = "/endscene";
 
 
     }
   };
-
-
-
-
 
   return (
     <>

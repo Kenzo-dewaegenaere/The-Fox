@@ -9,7 +9,7 @@ export default function Button() {
   return (
     <>
       <div className="header_player">
-        <a href="/Game" onClick={playGame} className="play__button">
+        <a href="/KeyboardSelection" onClick={playGame} className="play__button">
           Click and play!
         </a>
       </div>
