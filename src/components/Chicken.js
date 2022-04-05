@@ -38,8 +38,9 @@ export default function Model({ ...props }) {
     if (chickenHP <= 85) {
       chickenState = false;
 
+      //let url = '/endscene';
       window.location.href = "/endscene";
-
+      //window.history.pushState(null, '', url);
 
     }
   };

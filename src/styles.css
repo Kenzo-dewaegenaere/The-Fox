@@ -62,6 +62,24 @@ body {
   text-align: center;
 }
 
+.header_credits {
+  pointer-events: none;
+  position: absolute;
+  top: 70%;
+  left: 0;
+  color: white;
+  font-family: 'Josefin Sans',
+    sans-serif;
+  font-weight: 900;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center;
+}
+
+.header_credits_authors {
+  margin: 2.5em;
+}
+
 .header>span {
   padding: 0 3.25em;
   letter-spacing: 0.4em;
@@ -129,6 +147,19 @@ body {
   font-size: 3rem;
   margin: 5rem;
 }
+
+.play__button_credits {
+  text-decoration: none;
+  color: white;
+  font-size: 3rem;
+  margin-top: 15rem;
+}
+
+.play__button_credits:hover {
+  opacity: 50%;
+  text-decoration: none;
+}
+
 
 .selection__button:hover {
   opacity: 50%;
