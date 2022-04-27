@@ -19,7 +19,7 @@ import niceColors from "nice-color-palettes";
 import { useKeyboardInput } from "../hooks/useKeyboardInput";
 import { useMouseInput } from "../hooks/useMouseInput";
 import { useVariable } from "../hooks/useVariable";
-import { useYuka } from "../hooks/useYuka";
+
 
 
 
@@ -74,7 +74,7 @@ const Scene = () => {
           <Chicken scale={.3} position={[0, -.4, 0]} />
 
           <Player />
-          
+
 
           <Plane />
           <Edges />
@@ -369,7 +369,6 @@ const Player = () => {
     let velocity = new Vector3(0, 0, 0);
     let cameraDirection = new Vector3();
     camera.getWorldDirection(cameraDirection);
-
 
     let forward = new Vector3();
     forward.setFromMatrixColumn(camera.matrix, 0);
