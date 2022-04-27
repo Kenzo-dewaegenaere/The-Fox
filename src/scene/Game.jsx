@@ -385,7 +385,7 @@ const Player = () => {
       a = false;
       s = false;
       d = false;
-      k = false;
+      input.current = false;
     }
 
     if (w) {
