@@ -65,7 +65,7 @@ body {
 .header_credits {
   pointer-events: none;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 0;
   color: white;
   font-family: 'Josefin Sans',
@@ -80,6 +80,16 @@ body {
 .header_credits_authors {
   margin: 2.5em;
 }
+
+.header_credits_authors li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em;
+
+  font-size: smaller;
+}
+
 
 .header>span {
   padding: 0 3.25em;
