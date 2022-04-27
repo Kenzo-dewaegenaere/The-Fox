@@ -385,6 +385,7 @@ const Player = () => {
       a = false;
       s = false;
       d = false;
+      k = false;
     }
 
     if (w) {
