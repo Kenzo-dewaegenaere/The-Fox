@@ -379,6 +379,14 @@ const Player = () => {
 
     let [horizontal, vertical] = [0, 0];
 
+    if (!input.current) {
+      console.log(w, a, s, d);
+      w = false;
+      a = false;
+      s = false;
+      d = false;
+    }
+
     if (w) {
       vertical += 1;
     }
