@@ -9,12 +9,17 @@ const CreditsHtml = () => {
         </div>
 
         <div className="header_player">
-          <a href="/"  className="play__button_credits">
+          <a href="/" className="play__button_credits">
             Back to start!
           </a>
         </div>
 
         <div className="header_credits">
+
+          <div className="">
+            <h1>credits</h1>
+          </div>
+
           <p>
             The models that are used aren't mine so all credits go towards them.
           </p>
@@ -34,9 +39,6 @@ const CreditsHtml = () => {
           </div>
         </div>
 
-        <div className="middle">
-          <h1>credits</h1>
-        </div>
       </div>
     </>
   );
