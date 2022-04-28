@@ -7,7 +7,7 @@ export default function Button() {
   return (
     <>
       <div className="header_player">
-        <a href="/De-vos" className="selection__button">
+        <a href="/The-fox" className="selection__button">
           I'm using Azerty!
         </a>
 

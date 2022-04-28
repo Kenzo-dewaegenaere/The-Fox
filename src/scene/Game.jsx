@@ -1,5 +1,5 @@
 import "../styles.css";
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState, useCallback } from "react";
 import { Canvas, extend, useThree, useFrame, useLoader } from "@react-three/fiber";
 import { Html, Stars, Stats, PerspectiveCamera, Billboard, Text, Loader } from "@react-three/drei";
 import { Physics, usePlane, useSphere, useBox, Debug } from "@react-three/cannon";
@@ -16,7 +16,7 @@ import niceColors from "nice-color-palettes";
 
 
 //Hooks
-import { useKeyboardInput } from "../hooks/useKeyboardInput";
+//import { useKeyboardInput } from "../hooks/useKeyboardInput";
 import { useMouseInput } from "../hooks/useMouseInput";
 import { useVariable } from "../hooks/useVariable";
 
@@ -314,6 +314,57 @@ export const Cube = (props) => {
 };
 
 const Player = () => {
+
+
+  const useKeyboardInput = (keysToListen = []) => {
+    const getKeys = useCallback(() => {
+      const lowerCaseArray = [];
+      const hookReturn = {};
+
+      keysToListen.forEach((key) => {
+        const lowerCaseKey = key.toLowerCase();
+        lowerCaseArray.push(lowerCaseKey);
+        hookReturn[lowerCaseKey] = false;
+      });
+
+      return {
+        lowerCaseArray,
+        hookReturn
+      };
+    }, [keysToListen]);
+
+    const [keysPressed, setPressedKeys] = useState(getKeys().hookReturn);
+
+    useEffect(() => {
+      const handleKeyDown = (e) => {
+        const lowerKey = e.key.toLowerCase();
+        if (getKeys().lowerCaseArray.includes(lowerKey)) {
+          setPressedKeys((keysPressed) => ({ ...keysPressed, [lowerKey]: true }));
+        }
+      };
+      const handleKeyUp = (e) => {
+        const lowerKey = e.key.toLowerCase();
+        if (getKeys().lowerCaseArray.includes(lowerKey)) {
+          setPressedKeys((keysPressed) => ({
+            ...keysPressed,
+            [lowerKey]: false
+          }));
+        }
+      };
+
+      document.addEventListener("keydown", handleKeyDown);
+      document.addEventListener("keyup", handleKeyUp);
+
+      return () => {
+        document.removeEventListener("keydown", handleKeyDown);
+        document.removeEventListener("keyup", handleKeyUp);
+      };
+    }, [keysToListen, getKeys]);
+
+    return keysPressed;
+  };
+
+
   const speed = 200;
   const bulletSpeed = 35;
   const bulletCoolDown = 300;
@@ -380,13 +431,20 @@ const Player = () => {
     let [horizontal, vertical] = [0, 0];
 
     if (!input.current) {
-      console.log(w, a, s, d);
+      //console.log(w, a, s, d);
       w = false;
       a = false;
       s = false;
       d = false;
-      input.current = false;
     }
+
+
+    //als input.current niet gelijk is aan w a s of d dan wordt deze false
+
+    if (input) {
+      //console.log(input);
+    }
+
 
     if (w) {
       vertical += 1;

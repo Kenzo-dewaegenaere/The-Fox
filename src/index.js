@@ -3,7 +3,6 @@ import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Game from "./scene/Game";
-import GameNL from "./scene/GameNL";
 import Completed from "./scene/Completed";
 import EndScene from "./scene/EndScene";
 import KeyboardSelection from "./scene/KeyboardSelection";
@@ -21,7 +20,6 @@ render(
       <Route path="/" element={<App />} />
       <Route path="/keyboardSelection" element={<KeyboardSelection />} />
       <Route path="The-Fox" element={<Game />} />
-      <Route path="De-Vos" element={<GameNL />} />
       <Route path="EndScene" element={<EndScene />} />
       <Route path="Completed" element={<Completed />} />
     </Routes>
