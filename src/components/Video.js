@@ -51,9 +51,6 @@ const GoNext = () => {
   return (
     <>
       <div className="end-scene__pos">
-        <a href="/completed" className="end-scene__button">
-          go next!
-        </a>
         <Link to="/completed" className="end-scene__button">
           go next!
         </Link>
