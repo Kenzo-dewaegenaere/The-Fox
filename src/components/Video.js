@@ -4,6 +4,7 @@ import * as THREE from 'three'
 import { useEffect, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { useAspect } from '@react-three/drei'
+import { Link } from "react-router-dom";
 
 export default function Video() {
 
@@ -53,6 +54,9 @@ const GoNext = () => {
         <a href="/completed" className="end-scene__button">
           go next!
         </a>
+        <Link to="/completed" className="end-scene__button">
+          go next!
+        </Link>
       </div>
     </>
   )

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const CreditsHtml = () => {
   return (
@@ -9,9 +11,10 @@ const CreditsHtml = () => {
         </div>
 
         <div className="header_player">
-          <a href="/" className="play__button_credits">
+
+          <Link to="/" className="play__button_credits">
             Back to start!
-          </a>
+          </Link>
         </div>
 
         <div className="header_credits">

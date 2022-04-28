@@ -1,5 +1,7 @@
 import "../styles.css";
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 export default function PlayAgainButton() {
   const playGame = () => {
@@ -9,9 +11,10 @@ export default function PlayAgainButton() {
   return (
     <>
       <div className="header_player">
-        <a href="/" onClick={playGame} className="play__button">
+
+        <Link to="/" onClick={playGame} className="play__button">
           Click and play!
-        </a>
+        </Link>
       </div>
     </>
   );
