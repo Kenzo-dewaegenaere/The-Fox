@@ -1,5 +1,7 @@
 import "../styles.css";
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 export default function Button() {
 
@@ -7,13 +9,13 @@ export default function Button() {
   return (
     <>
       <div className="header_player">
-        <a href="/The-fox" className="selection__button">
-          I'm using Azerty!
-        </a>
 
-        <a href="/The-fox" className="selection__button">
+        <Link to="/The-fox" className="selection__button">
+          I'm using Azerty!
+        </Link>
+        <Link to="/The-fox" className="selection__button">
           I'm using Qwerty!
-        </a>
+        </Link>
 
       </div>
     </>

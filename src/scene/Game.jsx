@@ -316,6 +316,9 @@ export const Cube = (props) => {
 const Player = () => {
 
 
+  useFrame(() => {
+  }
+  );
   const useKeyboardInput = (keysToListen = []) => {
     const getKeys = useCallback(() => {
       const lowerCaseArray = [];
@@ -333,9 +336,11 @@ const Player = () => {
       };
     }, [keysToListen]);
 
+
     const [keysPressed, setPressedKeys] = useState(getKeys().hookReturn);
 
     useEffect(() => {
+
       const handleKeyDown = (e) => {
         const lowerKey = e.key.toLowerCase();
         if (getKeys().lowerCaseArray.includes(lowerKey)) {
