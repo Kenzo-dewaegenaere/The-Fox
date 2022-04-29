@@ -23,7 +23,7 @@ export default function Model({ ...props }) {
     type: "Dynamic",
     args: [.8, .8, .8],
     fixedRotation: true,
-    position: [4, .2, 2],
+    position: [4, .2, 45],
     onCollide: (e) => CheckImpact(e),
   }));
 
