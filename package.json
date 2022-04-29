@@ -17,6 +17,8 @@
     "@types/react": "^17.0.42",
     "@types/react-dom": "^17.0.14",
     "@types/three": "^0.138.0",
+    "async": "^2.6.4",
+    "ejs": "^3.1.7",
     "lerp": "^1.0.3",
     "nice-color-palettes": "^3.0.0",
     "r3f-perf": "^5.5.0",
