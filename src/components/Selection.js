@@ -10,7 +10,7 @@ export default function Button() {
     <>
       <div className="header_player">
 
-        <Link to="/The-fox" className="selection__button">
+        <Link to="/De-Vos" className="selection__button">
           I'm using Azerty!
         </Link>
         <Link to="/The-fox" className="selection__button">

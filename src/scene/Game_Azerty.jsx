@@ -88,7 +88,6 @@ const Scene = () => {
         <UI />
         <fog attach="fog" args={["black", 0, 15]} />
       </Suspense>
-      <Stats />
     </>
   );
 };
@@ -337,7 +336,7 @@ const Player = () => {
 
 
   const [bullets, setBullets] = useState([]);
-  const pressed = useKeyboardInput(["w", "a", "s", "d", " "]);
+  const pressed = useKeyboardInput(["z", "q", "s", "d", " "]);
   const pressedMouse = useMouseInput();
 
   const input = useVariable(pressed);
@@ -363,7 +362,7 @@ const Player = () => {
 
   useFrame((canvasState, delta) => {
 
-    const { w, s, a, d } = input.current;
+    const { z, q, s, d } = input.current;
     const space = input.current[" "];
 
     let velocity = new Vector3(0, 0, 0);
@@ -379,23 +378,8 @@ const Player = () => {
 
     let [horizontal, vertical] = [0, 0];
 
-    if (!input.current) {
-      //console.log(w, a, s, d);
-      w = false;
-      a = false;
-      s = false;
-      d = false;
-    }
 
-
-    //als input.current niet gelijk is aan w a s of d dan wordt deze false
-
-    if (input) {
-      //console.log(input);
-    }
-
-
-    if (w) {
+    if (z) {
       vertical += 1;
     }
     if (s) {
@@ -404,7 +388,7 @@ const Player = () => {
     if (d) {
       horizontal += 1;
     }
-    if (a) {
+    if (q) {
       horizontal -= 1;
     }
 
