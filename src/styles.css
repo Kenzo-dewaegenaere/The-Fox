@@ -224,42 +224,58 @@ body {
 }
 
 a {
-  background-color: #111827;
-  border: 1px solid transparent;
-  border-radius: .75rem;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  flex: 0 0 auto;
-  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.5rem;
-  padding: .75rem 1.2rem;
-  text-align: center;
-  text-decoration: none #6B7280 solid;
-  text-decoration-thickness: auto;
-  transition-duration: .2s;
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  position: relative;
+  height: 50px;
+  padding: 0 30px;
+
   user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: auto;
+  white-space: nowrap;
+  transition: all .05s linear;
+  font-family: inherit;
+}
+
+a:before,
+a:after {
+  content: "";
+  position: absolute;
+  transition: all .2s linear;
+}
+
+a:before {
+  width: calc(100% + 6px);
+  height: calc(100% - 16px);
+  top: 8px;
+  left: -3px;
+}
+
+a:after {
+  width: calc(100% - 16px);
+  height: calc(100% + 6px);
+  top: -3px;
+  left: 8px;
 }
 
 a:hover {
-  background-color: #374151;
+  cursor: crosshair;
 }
 
-audio:focus {
-  box-shadow: none;
-  outline: 2px solid white;
-  outline-offset: 2px;
+a:active {
+  transform: scale(0.95);
 }
 
-@media (min-width: 768px) {
-  a {
-    padding: .75rem 1.5rem;
-  }
+a:hover:before {
+  height: calc(100% - 32px);
+  top: 16px;
+}
+
+a:hover:after {
+  width: calc(100% - 32px);
+  left: 16px;
+}
+
+a span {
+  font-size: 15px;
+  z-index: 3;
+  position: relative;
+  font-weight: 600;
 }
