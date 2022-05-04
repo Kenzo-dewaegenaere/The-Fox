@@ -12,7 +12,7 @@ export const NerfBullet = (props) => {
 
       <mesh name={'bullet'} ref={boxRef} castShadow>
         <boxBufferGeometry attach="geometry" args={[.05, .05, .15]} />
-        <meshLambertMaterial color="blue" />
+        <meshLambertMaterial color="orange" />
       </mesh>
 
 
